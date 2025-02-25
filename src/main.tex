@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel} % Language 'english' or 'frenchb', delete out/ if changing language
-\usepackage{geometry}
+\usepackage[includehead, headheight=4em, headsep=2em]{geometry}
 \geometry{a4paper, margin=1in}
 
 % Packages
@@ -58,7 +58,7 @@
     \fancyhf{}
     \fancyhead[L]{}
     \fancyhead[C]{}
-    \fancyhead[R]{\vspace{-2em}\includegraphics[height=5em]{images/logo_ece}}
+    \fancyhead[R]{\includegraphics[height=4em]{images/logo_ece}}
     \fancyfoot[L]{\scriptsize \textit{\mytitle}}
     \fancyfoot[C]{\thepage}
     \fancyfoot[R]{\scriptsize \textit{\myauthor, \today}}
@@ -82,5 +82,8 @@
 
     \section{Second Section}\label{sec:second-section}
     \input{sections/second_section}
+
+%    \bibliography{main}
+%    \bibliographystyle{plain}
 
 \end{document}
