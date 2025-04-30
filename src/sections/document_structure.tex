@@ -1,0 +1,39 @@
+\section{Document Structure}\label{sec:document-structure}
+
+\subsection{Sections and Subsections}\label{subsec:sections-subsections}
+LaTeX provides a hierarchical structure for organizing documents through sections, subsections, and subsubsections.
+
+\subsubsection{Creating Sections}\label{subsubsec:creating-sections}
+Sections are created using the \verb|\section{}| command. The text inside the braces becomes the title of the section.
+
+\subsubsection{Section Hierarchy}\label{subsubsec:section-hierarchy}
+LaTeX supports up to 7 levels of depth:
+\begin{itemize}
+    \item \verb|\part{}| - Only used in large documents
+    \item \verb|\chapter{}| - Only available in book and report classes
+    \item \verb|\section{}| - Main divisions of a document
+    \item \verb|\subsection{}| - Subdivisions of a section
+    \item \verb|\subsubsection{}| - Further subdivisions
+    \item \verb|\paragraph{}| - Rarely used
+    \item \verb|\subparagraph{}| - Rarely used
+\end{itemize}
+
+\subsection{Labels and Cross-References}\label{subsec:labels-cross-refs}
+Labels allow you to reference sections, figures, tables, and more throughout your document.
+
+\subsubsection{Creating Labels}\label{subsubsec:creating-labels}
+Add a label using \verb|\label{sec:my-label}| after a section heading or inside a figure/table environment.
+
+\subsubsection{Referencing Labels}\label{subsubsec:referencing-labels}
+Reference a label using \verb|\ref{sec:my-label}| to display its number, or \verb|\pageref{sec:my-label}| to display its page number.
+
+Example: This section is Section~\ref{sec:document-structure} on page~\pageref{sec:document-structure}.
+
+\subsection{Table of Contents}\label{subsec:table-of-contents}
+The table of contents is generated automatically from section headings using the \verb|\tableofcontents| command (as seen at the beginning of this document).
+
+\subsubsection{Customizing TOC Depth}\label{subsubsec:toc-depth}
+Control which levels appear in the TOC with:
+\begin{verbatim}
+\setcounter{tocdepth}{2}  % Show sections and subsections
+\end{verbatim}

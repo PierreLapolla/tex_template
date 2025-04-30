@@ -3,9 +3,13 @@
 % Geometry for page layout
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel} % Language 'english' or 'frenchb', delete out/ if changing language
-\usepackage[includehead, headheight=4em, headsep=2em]{geometry}
+\usepackage[french]{babel} % Language 'english' or 'french', delete out/ if changing language
+\usepackage{geometry}
 \geometry{a4paper, margin=1in}
+\setlength{\headheight}{4em}
+\setlength{\headsep}{1em}
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{1em}
 
 % Packages
 \usepackage{amsmath}
@@ -26,10 +30,11 @@
 \usepackage{pdfpages}
 \usepackage{indentfirst}
 \usepackage{parskip}
+\usepackage{appendix}
+\usepackage{glossaries}
+\usepackage{amssymb}
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\setlength{\parindent}{15pt}
-\setlength{\parskip}{1em}
 
 % Definitions
 \definecolor{bleu_ece}{HTML}{00727A}
@@ -72,18 +77,27 @@
 \author{\myauthor}
 \date{\today}
 
+% Glossary
+\makeglossaries
+
 \begin{document}
     \input{sections/cover}
 
+    \input{sections/document_structure}
 
-    \section{First Section}\label{sec:first-section}
-    \input{sections/first_section}
+    \input{sections/text}
 
+    \input{sections/visuals}
 
-    \section{Second Section}\label{sec:second-section}
-    \input{sections/second_section}
+    \input{sections/maths}
 
-%    \bibliography{main}
-%    \bibliographystyle{plain}
+    %\input{sections/technical}
+
+    \input{sections/glossary}
+
+    \bibliography{main}
+    \bibliographystyle{unsrt}
+
+    %\input{sections/appendices}
 
 \end{document}

@@ -1,0 +1,170 @@
+\section{Visual Elements}\label{sec:visual-elements}
+
+\subsection{Figures and Images}\label{subsec:figures}
+LaTeX can easily incorporate images using the \texttt{graphicx} package.
+
+\subsubsection{Basic Figure Insertion}\label{subsubsec:basic-figures}
+The basic syntax for including figures is:
+
+\begin{verbatim}
+\begin{figure}[<placement>]
+    \centering
+    \includegraphics[width=<width>]{<filename>}
+    \caption{<caption text>}
+    \label{fig:<label>}
+\end{figure}
+\end{verbatim}
+
+Example:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/default}
+    \caption{A simple figure example}
+    \label{fig:simple-example}
+\end{figure}
+
+\subsubsection{Subfigures}\label{subsubsec:subfigures}
+The \texttt{subcaption} package allows multiple images in a single figure:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/default}
+        \caption{First subfigure}
+        \label{fig:subfig-a}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/default}
+        \caption{Second subfigure}
+        \label{fig:subfig-b}
+    \end{subfigure}
+    \caption{Multiple subfigures in one figure}
+    \label{fig:subfigures}
+\end{figure}
+
+\subsubsection{Image Customization}\label{subsubsec:image-customization}
+The \texttt{includegraphics} command accepts various options:
+\begin{itemize}
+    \item \texttt{width=0.8\textbackslash textwidth} - Set width (relative or absolute)
+    \item \texttt{height=5cm} - Set height
+    \item \texttt{scale=0.75} - Scale the image
+    \item \texttt{angle=45} - Rotate the image
+    \item \texttt{trim=left bottom right top} - Crop the image
+    \item \texttt{clip} - Used with trim to enable cropping
+\end{itemize}
+
+\subsection{Tables}\label{subsec:tables}
+Tables in LaTeX offer advanced formatting and alignment options.
+
+\subsubsection{Basic Tables}\label{subsubsec:basic-tables}
+The basic syntax for tables:
+
+\begin{verbatim}
+\begin{table}[<placement>]
+    \caption{<caption text>}
+    \centering
+    \begin{tabular}{<column alignment>}
+        \toprule
+        <header row> \\
+        \midrule
+        <data rows> \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:<label>}
+\end{table}
+\end{verbatim}
+
+Example:
+\begin{table}[htbp]
+    \caption{Sample Data Comparison}
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Feature} & \textbf{Method A} & \textbf{Method B} \\
+        \midrule
+        Accuracy & 87.5\% & 92.3\% \\
+        Speed & 1.2 s & 2.5 s \\
+        Memory & 4.5 GB & 2.8 GB \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:sample-comparison}
+\end{table}
+
+\subsubsection{Column Alignment}\label{subsubsec:column-alignment}
+Column specifiers:
+\begin{itemize}
+    \item \texttt{l} - Left-aligned column
+    \item \texttt{c} - Center-aligned column
+    \item \texttt{r} - Right-aligned column
+    \item \texttt{p\{width\}} - Paragraph column with specified width
+    \item \texttt{|} - Vertical line between columns (e.g., \texttt{|l|c|r|})
+\end{itemize}
+
+\subsubsection{Advanced Tables}\label{subsubsec:advanced-tables}
+For more complex tables:
+
+\begin{table}[htbp]
+    \caption{Advanced Table Example}
+    \centering
+    \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{3cm}c@{}}
+        \toprule
+        \textbf{Category} & \textbf{Description} & \textbf{Value} \\
+        \midrule
+        Type A & Short description that wraps to multiple lines & 42.5 \\
+        \midrule
+        Type B & Another description showing text wrapping & 18.3 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:advanced-example}
+\end{table}
+
+\subsection{Color Usage}\label{subsec:color-usage}
+The \texttt{xcolor} package provides comprehensive color handling.
+
+\subsubsection{Text Color}\label{subsubsec:text-color}
+Change text color using:
+\begin{verbatim}
+\textcolor{<color>}{<text>}
+\end{verbatim}
+
+Examples:
+\textcolor{red}{Red text},
+\textcolor{blue}{Blue text},
+\textcolor{green}{Green text}
+
+\subsubsection{Background Color}\label{subsubsec:background-color}
+Add a background color with:
+\begin{verbatim}
+\colorbox{<color>}{<text>}
+\end{verbatim}
+
+Examples:
+\colorbox{yellow}{Text with yellow background},
+\colorbox{lightgray}{Text with gray background}
+
+\subsubsection{Custom Colors}\label{subsubsec:custom-colors}
+Define custom colors using RGB, HTML, or CMYK values:
+
+\begin{verbatim}
+\definecolor{customblue}{RGB}{0, 114, 122}
+\definecolor{lightorange}{HTML}{FFE0B2}
+\definecolor{mypurple}{cmyk}{0.3,0.8,0,0}
+\end{verbatim}
+
+Example: \textcolor{\bleuece}{This text uses the custom ECE blue color} defined in the preamble.
+
+\subsubsection{Colored Boxes}\label{subsubsec:colored-boxes}
+Create a colored box with text:
+
+\begin{center}
+\fcolorbox{black}{lightgray}{
+    \begin{minipage}{0.8\textwidth}
+        \centering
+        This is a highlighted box that can contain important information\\
+        or notices for the reader.
+    \end{minipage}
+}
+\end{center}

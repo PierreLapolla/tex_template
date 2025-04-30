@@ -1,0 +1,85 @@
+\section{Basic Text Elements}\label{sec:text-elements}
+
+\subsection{Text Formatting}\label{subsec:text-formatting}
+LaTeX provides various commands for text formatting:
+
+\subsubsection{Basic Formatting}\label{subsubsec:basic-formatting}
+\begin{itemize}
+    \item \textbf{Bold text} is created using \verb|\textbf{Bold text}|
+    \item \textit{Italic text} is created using \verb|\textit{Italic text}|
+    \item \underline{Underlined text} is created using \verb|\underline{Underlined text}|
+    \item \texttt{Monospaced text} is created using \verb|\texttt{Monospaced text}|
+    \item \textsc{Small Caps} is created using \verb|\textsc{Small Caps}|
+\end{itemize}
+
+\subsubsection{Font Sizes}\label{subsubsec:font-sizes}
+LaTeX provides commands to change text size:
+{\tiny tiny} $\to$
+{\scriptsize scriptsize} $\to$
+{\footnotesize footnotesize} $\to$
+{\small small} $\to$
+{\normalsize normalsize} $\to$
+{\large large} $\to$
+{\Large Large} $\to$
+{\LARGE LARGE} $\to$
+{\huge huge} $\to$
+{\Huge Huge}
+
+\subsection{Lists}\label{subsec:lists}
+LaTeX provides several environments for creating lists:
+
+\subsubsection{Unordered Lists}\label{subsubsec:unordered-lists}
+\begin{verbatim}
+\begin{itemize}
+    \item First item
+    \item Second item
+\end{itemize}
+\end{verbatim}
+
+Which produces:
+\begin{itemize}
+    \item First item
+    \item Second item
+\end{itemize}
+
+\subsubsection{Ordered Lists}\label{subsubsec:ordered-lists}
+\begin{verbatim}
+\begin{enumerate}
+    \item First item
+    \item Second item
+\end{enumerate}
+\end{verbatim}
+
+Which produces:
+\begin{enumerate}
+    \item First item
+    \item Second item
+\end{enumerate}
+
+\subsubsection{Description Lists}\label{subsubsec:description-lists}
+\begin{verbatim}
+\begin{description}
+    \item[Term 1] Definition 1
+    \item[Term 2] Definition 2
+\end{description}
+\end{verbatim}
+
+Which produces:
+\begin{description}
+    \item[Term 1] Definition 1
+    \item[Term 2] Definition 2
+\end{description}
+
+\subsection{Multi-Column Layouts}\label{subsec:multi-column-layouts}
+The \texttt{multicol} package allows for easy creation of multi-column text:
+
+\begin{verbatim}
+\begin{multicols}{2}
+    Content spanning multiple columns...
+\end{multicols}
+\end{verbatim}
+
+Example with two columns:
+\begin{multicols}{2}
+    \lipsum[1]
+\end{multicols}
