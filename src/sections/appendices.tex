@@ -1,0 +1,43 @@
+\clearpage
+\appendixpage
+\begin{appendices}
+
+\section{Introduction to Appendices}\label{app:intro}
+Appendices contain supplementary material that would disrupt the flow of the main document. The \texttt{appendix} package provides enhanced control over appendix formatting.
+
+\subsection{Basic Appendix Structure}\label{subsec:basic-appendix}
+The basic structure for creating appendices is:
+
+\begin{verbatim}
+\begin{appendices}
+    \section{First Appendix}
+    Content of first appendix.
+
+    \section{Second Appendix}
+    Content of second appendix.
+\end{appendices}
+\end{verbatim}
+
+\section{Appendix Content Types}\label{app:content}
+
+\subsection{Data Tables}\label{subsec:appendix-tables}
+Appendices are ideal for large tables that would disrupt the main text.
+
+\subsection{Supplementary Figures}\label{subsec:appendix-figures}
+Additional figures that support your conclusions.
+
+\subsection{Code Listings}\label{subsec:appendix-code}
+Full code implementations that are referenced in the document.
+
+\subsection{Mathematical Proofs}\label{subsec:appendix-proofs}
+Detailed proofs or derivations that would interrupt the flow.
+
+\section{Cross-Referencing Appendices}\label{app:references}
+Reference appendices from your main text using standard LaTeX references:
+
+\begin{verbatim}
+See Appendix~\ref{app:content} for the complete dataset.
+The full proof is provided in Appendix~\ref{app:references}.
+\end{verbatim}
+
+\end{appendices}

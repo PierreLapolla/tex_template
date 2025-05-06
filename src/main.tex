@@ -33,8 +33,11 @@
 \usepackage{appendix}
 \usepackage{glossaries}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\appendixtocname}{Appendices}
+\renewcommand{\appendixpagename}{Appendices}
 
 % Definitions
 \definecolor{bleu_ece}{HTML}{00727A}
@@ -91,13 +94,13 @@
 
     \input{sections/maths}
 
-    %\input{sections/technical}
+    \input{sections/technical}
 
     \input{sections/glossary}
 
     \bibliography{main}
     \bibliographystyle{unsrt}
 
-    %\input{sections/appendices}
+    \input{sections/appendices}
 
 \end{document}

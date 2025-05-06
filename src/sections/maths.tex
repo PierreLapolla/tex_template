@@ -1,0 +1,160 @@
+\section{Mathematical Content}\label{sec:mathematical-content}
+
+\subsection{Inline Mathematics}\label{subsec:inline-mathematics}
+LaTeX excels at typesetting mathematics. Inline math is enclosed in \texttt{\$...\$} or \texttt{\(...\)}:
+
+\begin{itemize}
+    \item The Pythagorean theorem: $a^2 + b^2 = c^2$
+    \item Euler's identity: $e^{i\pi} + 1 = 0$
+    \item A fraction in text: \(f(x) = \frac{x^2 - 1}{x - 1}\) simplifies to $f(x) = x + 1$ for $x \neq 1$
+    \item Subscripts and superscripts: $x_i^2 + y_j^2 = z_{ij}^2$
+\end{itemize}
+
+\subsection{Display Equations}\label{subsec:display-equations}
+For standalone equations, use \texttt{\[...\]} or the \texttt{equation} environment:
+
+\begin{verbatim}
+\[
+    \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+\end{verbatim}
+
+Which produces:
+\[
+    \int_{a}^{b} f(x) \, dx = F(b) - F(a)
+\]
+
+\subsection{Numbered Equations}\label{subsec:numbered-equations}
+The \texttt{equation} environment automatically numbers equations:
+
+\begin{equation}
+    E = mc^2
+    \label{eq:einstein}
+\end{equation}
+
+You can reference equations using \texttt{\\ref} or \texttt{\\eqref}: Equation~\eqref{eq:einstein} shows Einstein's famous equation.
+
+\subsection{Mathematical Symbols}\label{subsec:mathematical-symbols}
+LaTeX provides an extensive set of mathematical symbols:
+
+\subsubsection{Greek Letters}\label{subsubsec:greek-letters}
+$\alpha, \beta, \gamma, \delta, \epsilon, \varepsilon, \zeta, \eta, \theta, \vartheta$
+
+$\pi, \varpi, \rho, \varrho, \sigma, \varsigma, \tau, \upsilon, \phi, \varphi$
+
+$\Gamma, \Delta, \Theta, \Lambda, \Xi, \Pi, \Sigma, \Upsilon, \Phi, \Psi, \Omega$
+
+\subsubsection{Operators}\label{subsubsec:operators}
+$+, -, \times, \div, \pm, \mp, \cdot, \star, \circ, \bullet$
+
+\subsubsection{Relations}\label{subsubsec:relations}
+$=, \neq, \approx, \sim, \simeq, \cong, \equiv, <, \leq, >, \geq, \ll, \gg$
+
+\subsubsection{Set Symbols}\label{subsubsec:set-symbols}
+$\in, \notin, \subset, \subseteq, \supset, \supseteq, \cap, \cup, \emptyset$
+
+\subsubsection{Calculus}\label{subsubsec:calculus}
+$\sum_{i=1}^{n}, \prod_{i=1}^{n}, \int_{a}^{b}, \oint, \nabla, \partial, \infty, \lim_{x \to \infty}$
+
+\subsection{Multiple Equations}\label{subsec:multiple-equations}
+The \texttt{align} environment from \texttt{amsmath} aligns multiple equations:
+
+\begin{align}
+    (a+b)^2 &= (a+b)(a+b) \\
+    &= a^2 + ab + ba + b^2 \\
+    &= a^2 + 2ab + b^2
+    \label{eq:binomial-expansion}
+\end{align}
+
+\subsection{Matrix Notation}\label{subsec:matrix-notation}
+Various matrix environments are available:
+
+\subsubsection{Basic Matrix}\label{subsubsec:basic-matrix}
+\[
+\begin{matrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{matrix}
+\]
+
+\subsubsection{Parenthesized Matrix}\label{subsubsec:parenthesized-matrix}
+\[
+\begin{pmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{pmatrix}
+\]
+
+\subsubsection{Determinant}\label{subsubsec:determinant}
+\[
+\begin{vmatrix}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{vmatrix}
+\]
+
+\subsection{Piecewise Functions}\label{subsec:piecewise-functions}
+The \texttt{cases} environment handles piecewise definitions:
+
+\[
+f(x) = \begin{cases}
+    x^2 & \text{if $x \geq 0$} \\
+    -x^2 & \text{if $x < 0$}
+\end{cases}
+\]
+
+\subsection{Advanced Equation Formatting}\label{subsec:advanced-equation-formatting}
+For complex equations, additional environments help:
+
+\subsubsection{Fractions and Binomials}\label{subsubsec:fractions-binomials}
+\[
+\frac{1}{1 + \frac{1}{1 + \frac{1}{1 + x}}} \quad \text{and} \quad
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
+\]
+
+\subsubsection{Multi-line Equations}\label{subsubsec:multi-line-equations}
+Use \texttt{aligned} for equations that need alignment within a larger equation:
+
+\[
+\begin{aligned}
+S &= \sum_{i=1}^{n} i^2 \\
+&= \frac{n(n+1)(2n+1)}{6}
+\end{aligned}
+\]
+
+\subsubsection{Equation Arrays}\label{subsubsec:equation-arrays}
+The \texttt{array} environment offers complete flexibility:
+
+\[
+\left\{
+\begin{array}{rcl}
+x + y + z &=& 10 \\
+xy + yz + zx &=& 24 \\
+xyz &=& 40
+\end{array}
+\right.
+\]
+
+\subsection{Theorem Environments}\label{subsec:theorem-environments}
+Mathematical documents often include theorems and lemmas:
+
+\begin{verbatim}
+% Add this to your preamble:
+% \usepackage{amsthm}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma}
+\end{verbatim}
+
+A theorem would then be written as:
+
+\begin{verbatim}
+\begin{theorem}
+For any right triangle with sides $a$, $b$ and hypotenuse $c$, $a^2 + b^2 = c^2$.
+\end{theorem}
+\end{verbatim}
+
+% Note: Proof environment requires amsthm package
+% To use the proof environment, add \usepackage{amsthm} to your preamble

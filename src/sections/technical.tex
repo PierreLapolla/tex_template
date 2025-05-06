@@ -1,0 +1,225 @@
+\section{Technical Features}\label{sec:technical-features}
+
+\subsection{Code Listings}\label{subsec:code-listings}
+The \texttt{listings} package provides excellent support for displaying code with syntax highlighting.
+
+\subsubsection{Basic Code Listing}\label{subsubsec:basic-listing}
+To include code in your document, use the \texttt{lstlisting} environment:
+
+\begin{lstlisting}[language=Python, caption=Basic Python function,label={lst:lstlisting}]
+def factorial(n):
+    """Calculate factorial of n."""
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Calculate factorial of 5
+result = factorial(5)
+print(f"5! = {result}")  # Output: 5! = 120
+\end{lstlisting}
+
+\subsubsection{Customizing Listings}\label{subsubsec:customized-listing}
+You can customize the appearance of your code listings:
+
+\begin{lstlisting}[
+    language=C++,
+    caption=C++ Class Example,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    frame=single
+]
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    double width;
+    double height;
+
+public:
+    // Constructor
+    Rectangle(double w, double h) {
+        width = w;
+        height = h;
+    }
+
+    // Calculate area
+    double getArea() {
+        return width * height;
+    }
+
+    // Calculate perimeter
+    double getPerimeter() {
+        return 2 * (width + height);
+    }
+};
+
+int main() {
+    // Create a rectangle with width 5 and height 3
+    Rectangle rect(5.0, 3.0);
+
+    // Output area and perimeter
+    cout << "Area: " << rect.getArea() << endl;
+    cout << "Perimeter: " << rect.getPerimeter() << endl;
+
+    return 0;
+}
+\end{lstlisting}
+
+\subsubsection{Inline Code}\label{subsubsec:inline-code}
+You can also include inline code with \lstinline|print("Hello, world!")| that fits within your text.
+
+\subsubsection{Configure Listings Styles}\label{subsubsec:listing-styles}
+In your preamble, you can define custom listing styles:
+
+\begin{verbatim}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{lightgray!30},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+\end{verbatim}
+
+\subsection{Glossary Usage}\label{subsec:glossary-usage}
+LaTeX provides excellent support for creating glossaries through the \texttt{glossaries} package.
+
+\subsubsection{Defining Terms}\label{subsubsec:defining-terms}
+In your preamble or in a separate file, define glossary terms:
+
+\begin{verbatim}
+\newglossaryentry{latex}{
+    name=LaTeX,
+    description={A document preparation system}
+}
+
+\newglossaryentry{pdf}{
+    name=PDF,
+    description={Portable Document Format}
+}
+\end{verbatim}
+
+\subsubsection{Using Glossary Terms}\label{subsubsec:using-terms}
+Reference glossary terms in your document with:
+
+\begin{verbatim}
+\gls{latex} is used to create \gls{pdf} files.
+\end{verbatim}
+
+Different forms are available:
+\begin{itemize}
+    \item \texttt{\textbackslash gls\{term\}} - Standard reference
+    \item \texttt{\textbackslash Gls\{term\}} - Capitalized first letter
+    \item \texttt{\textbackslash glspl\{term\}} - Plural form
+    \item \texttt{\textbackslash glsadd\{term\}} - Add to glossary without displaying
+\end{itemize}
+
+\subsubsection{Printing the Glossary}\label{subsubsec:printing-glossary}
+To include the glossary in your document:
+
+\begin{verbatim}
+\printglossaries
+\end{verbatim}
+
+Remember that you need to run additional commands to generate the glossary:
+\begin{verbatim}
+pdflatex document
+makeglossaries document
+pdflatex document
+\end{verbatim}
+
+\subsection{Bibliography and Citations}\label{subsec:bibliography}
+LaTeX offers powerful bibliography management through BibTeX and BibLaTeX.
+
+\subsubsection{BibTeX Format}\label{subsubsec:bibtex-format}
+Bibliography entries are stored in a \texttt{.bib} file:
+
+\begin{verbatim}
+@book{knuth1986texbook,
+  title={The TeXbook},
+  author={Knuth, Donald E},
+  year={1986},
+  publisher={Addison-Wesley}
+}
+
+@article{lamport1994latex,
+  title={LaTeX: A Document Preparation System},
+  author={Lamport, Leslie},
+  journal={Addison-Wesley},
+  year={1994}
+}
+\end{verbatim}
+
+\subsubsection{Citing Sources}\label{subsubsec:citing}
+Citations can be added to your document using various commands:
+
+\begin{verbatim}
+\cite{knuth1986texbook}     % Standard citation: [1]
+\textcite{lamport1994latex} % Author citation: Lamport [2]
+\parencite{knuth1986texbook} % Parenthetical: (Knuth, 1986)
+\end{verbatim}
+
+\subsubsection{Bibliography Styles}\label{subsubsec:bibliography-styles}
+Different citation styles can be used:
+
+\begin{verbatim}
+\bibliographystyle{plain}    % Standard numbered
+\bibliographystyle{unsrt}    % Unsorted numbered
+\bibliographystyle{alpha}    % Alpha-style [Knu86]
+\bibliographystyle{ieeetr}   % IEEE Transactions style
+\end{verbatim}
+
+\subsubsection{Printing the Bibliography}\label{subsubsec:printing-bibliography}
+To include the bibliography in your document:
+
+\begin{verbatim}
+\bibliography{references}  % references.bib is your database
+\end{verbatim}
+
+For BibLaTeX, the commands are different:
+
+\begin{verbatim}
+\printbibliography[title=References]
+\end{verbatim}
+
+\subsection{Cross-Referencing}\label{subsec:cross-referencing}
+LaTeX makes it easy to reference different parts of your document:
+
+\begin{itemize}
+    \item Sections: \texttt{\textbackslash ref\{sec:technical-features\}}
+    \item Equations: \texttt{\textbackslash eqref\{eq:einstein\}}
+    \item Figures: \texttt{\textbackslash ref\{fig:example\}}
+    \item Tables: \texttt{\textbackslash ref\{tab:sample\}}
+\end{itemize}
+
+For example, refer to Section~\ref{sec:technical-features} or see Figure~\ref{fig:simple-example} in the visuals section.
+
+\subsection{Hyperlinks}\label{subsec:hyperlinks}
+The \texttt{hyperref} package allows adding hyperlinks:
+
+\begin{verbatim}
+\href{https://www.latex-project.org/}{LaTeX Project Website}
+\end{verbatim}
+
+Example: \href{https://www.latex-project.org/}{LaTeX Project Website}
+
+You can also create internal links with:
+
+\begin{verbatim}
+\hyperref[sec:technical-features]{Technical Features Section}
+\end{verbatim}
