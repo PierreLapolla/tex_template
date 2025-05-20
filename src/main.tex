@@ -36,8 +36,10 @@
 \usepackage{amsthm}
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
-\renewcommand{\appendixtocname}{Appendices}
-\renewcommand{\appendixpagename}{\color{\bleuece}Appendices}
+\AtBeginDocument{
+  \renewcommand{\appendixtocname}{\appendixname}
+  \renewcommand{\appendixpagename}{\color{\bleuece}\appendixname}
+}
 
 % Definitions
 \definecolor{bleu_ece}{HTML}{00727A}
