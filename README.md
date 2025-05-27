@@ -14,4 +14,4 @@ Please cite this project as a BibTeX entry if you use it in your work:
     note = {\url{https://github.com/PierreLapolla/tex_template.git}}
 }
 ```
-or use [this link](https://github.com/PierreLapolla/tex_template.git).
+or use the link to [this page](https://github.com/PierreLapolla/tex_template.git).
